@@ -1,0 +1,179 @@
+.nav-header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h3 {
+	padding-top: .15rem;
+	padding-bottom: .15rem;
+	font-size: .18rem;
+}
+
+.nav-header a img {
+	height: .2rem;
+	position: absolute;
+	top: .19rem;
+	left: .1rem;
+
+}
+
+.liwu {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.liwu img:nth-child(1) {
+	width: 1.25rem;
+}
+
+.liwu p:nth-child(2) {
+	width: .98rem;
+	height: .98rem;
+	margin-top: -1.08rem;
+	opacity: .33;
+	border: 1px solid red;
+	border-radius: 50%;
+	background: #000000;
+	font-size: .21rem;
+	line-height: .98rem;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: HappyZcool;
+
+
+}
+
+.liwu p:nth-child(3) {
+	font-size: .15rem;
+	color: #c1c1c1;
+	font-weight: 500;
+	padding-top: .18rem;
+	font-family: PingFang;
+}
+
+.liwu p:nth-child(4) {
+	font-size: .18rem;
+	color: #c1c1c1;
+	font-weight: 500;
+	padding-top: .05rem;
+	padding-bottom: .1rem;
+	font-family: PingFang;
+}
+
+.gift {
+	display: flex;
+	justify-content: space-between;
+	font-size: .14rem;
+	color: #656565;
+	font-weight: 500;
+	padding: .14rem .2rem .1rem;
+	font-family: PingFang;
+}
+
+.hezi {
+	border: 1px solid #efefef;
+	margin: 0 .15rem;
+	border-radius: .05rem;
+}
+
+.huise {
+	color: #999999;
+}
+
+.lihe3 {
+	padding: .05rem .15rem .27rem .15rem;
+	display: flex;
+	justify-content: space-between;
+	font-size: .11rem;
+	color: $b6b6b6;
+	font-weight: 300;
+	margin-top: .05rem;
+}
+
+.lihe3 .luck span {
+	color: #f7be11;
+
+}
+
+.ylq {
+	font-size: .12rem;
+	display: flex;
+	justify-content: space-between;
+	line-height: .23rem;
+	background: #f8f8f8;
+	padding: 0 .15rem;
+}
+
+.ylq a {
+	color: #45c944;
+	border-bottom: 1px solid #45c944;
+}
+
+.ylq a:hover {
+	color: #45c944;
+	text-decoration: none;
+}
+
+.px {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: .2rem .15rem 0;
+	color: #777777;
+	font-size: .13rem;
+}
+
+.px1 {
+	flex: 92;
+
+	display: flex;
+}
+
+.px p:nth-child(2) {
+	flex: 180;
+	text-align: center;
+}
+
+.px p:nth-child(3) {
+	flex: 73;
+}
+
+.px1 p:nth-child(1) {
+	flex: 3;
+}
+
+.px1 p:nth-child(2) {
+	flex: 17;
+	display: flex;
+	justify-content: center;
+}
+
+.px1 p:nth-child(2) span {
+	line-height: .2rem;
+	width: .2rem;
+	height: .2rem;
+	border-radius: .05rem;
+	margin: 0 .13rem;
+	background: #d1d1d1;
+	background-size: .15rem;
+}
+
+.px1 p:nth-child(3) {
+	flex: 15;
+}
+
+.px1 p:nth-child(2) img {
+	width: .14rem;
+	height: .15rem;
+	margin-left: -.215rem;
+	margin-top: -.05rem;
+}
+
+.px2 {
+	padding-bottom: .64rem;
+}
