@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="num1" value="1" />
+		+
+		<input type="text" name="" id="mun2" value="2" />
+		=
+		<input type="text" name="" id="result" value="结果" disabled="disabled" readonly="readonly" />
+		<hr>
+		<!-- 点击按钮会执行onclick后边的代码 -->
+		<button type="button" onclick="hello()">点击运算</button>
+		<!-- readonly:只读
+	     disabled：不能点 -->
+		<script type="text/javascript">
+			// 引用类型：  对象（object）  数组（array）   函数（function） 
+			//对象-------------------------
+			var person = {
+				//k:value
+				name: "aodi",
+				age: 18,
+				sex: "男",
+				girl: {
+					name: "小宁"
+				},
+				//对象下的方法
+				buyBread:function(money){
+					//去买面包............
+					return "买了"+ money +"个说小面包";
+					
+				}
+			};
+			console.log(person, typeof person);
+			//访问对象下的属性----点语法
+			console.log("姓名：" + person.name + ",年龄" + person.age);
+			//修改对象下的属性
+			person.name = "强";
+			person.age = 28;
+			console.log(" 姓名: " + person.name + ",年龄" + person.age);
+
+			//访问
+			console.log(" 女朋友的姓名: " + person.girl.name);
+			//修改
+			person.girl.name = "校花";
+			console.log(" 女朋友的姓名: " + person.girl.name);
+
+			//函数----------------------------
+			function hello() {
+				//函数体:只有执行函数,才会被触发
+				console.log("hello 函数");
+			}
+			//调用函数: 函数名+()
+			hello();
+			var value = hello();
+			//undefined,没有返回值
+			 console.log(value);
+			//有返回值的函数
+			var time = Date();
+			console.log(time);
+			
+			
+			//自定义一个有返回值的函数
+			function buyOrange( money){
+				//把结果返回给了调用者
+				// alert(money);
+				return "买了" + money  + "一个橘子";
+			}
+			//buyOrange()被函数中的返回值给替换
+			//传递参数
+			var res = buyOrange(100);
+			console.log(res);
+			
+		var bread =	person.buyBread(2);
+		console.log(bread);
+		</script>
+	</body>
+</html>

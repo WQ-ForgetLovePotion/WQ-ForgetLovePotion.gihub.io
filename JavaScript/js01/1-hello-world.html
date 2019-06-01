@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- type可以省略 -->
+		<script type="text/javascript">
+		// 控制台调试输出
+		// 从上到下输出
+			console.log("hello world");
+			console.log("学习JavaScript");
+		</script>
+	</head>
+	<body>
+		<h1>获取当前时间</h1>
+		<p id="time">这是时间</p>
+		
+	  <!-- 引入外部js文件 -->
+	  <!-- 引用外部文件大的scrip标签内不能放js代码，不能解析，无效 -->
+		<script src="js/hello.js"></script>
+		<script type="text/javascript">
+			
+			console.log("中北大学");
+			//获取当前时间,放到time的内容区显示
+		 time.innerHTML =	Date();
+		 
+		 //第二种调试方法
+		 document.write("hello world");
+		 document.write("<h2>hello world </h2>");
+		 //第三种调试(弹框）)
+			 alert("hello world");
+			
+		 
+		</script>
+	</body>
+</html>

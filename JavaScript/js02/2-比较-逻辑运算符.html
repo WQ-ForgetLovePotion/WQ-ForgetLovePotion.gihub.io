@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//比较运算:返回true 或者 false
+			var x = 18;
+			//一个等于号是赋值,分/两个或者三个是比较
+			x == "18";
+			var value = x > 18; //一个疑问？(x是不是大于18)
+			console.log(value) //布尔值false
+
+			var value = x == 18; //一个疑问？(x是不是等于18)
+			console.log(value) //布尔值true
+
+			var value = x != 28; //一个疑问？(x是不是等于18)
+			console.log(value) //布尔值true
+			//不相等才返回正确
+
+			var x = "18";
+			var value = x === 18; //绝对等于,值和类型必须相同
+			console.log(value) //布尔值false
+
+			//无论()有多长,最终拿到的是一个正确或者错误的
+			if (undefined) {
+				//成立
+				console.log("返回的是正确的，执行成立");
+			} else {
+				console.log("返回的是错误的，执行不成立");
+			}
+			/* 1. 非0都是true;0为false
+			   2. 容易犯的错：比较的时候只写一个=，把比较变成了赋值，永远成立
+			   3.NaN == NaN 返回错误（自己不等于自己）唯一一个，其他都相等
+			   4. isNaN() 这个内置函数,判断变量 是否是非数字值。
+			参数值为 NaN 或字符串、对象、undefined等非数字值则返回 true, 否则返回 false。
+			isNaN(100) -> false 
+			isNaN(NaN) -> true
+			isNaN("ABC") -> true
+			isNaN(undefinde) -> true
+
+			   
+			   
+			   有那值在判断中是false?
+			   1.空的字符串，没空格 ""
+			   2.Number中的0
+			   3.Number中的NaN
+			   4.undefined 未定义
+			   5.null
+			   6.false
+			 */
+
+
+
+
+			//逻辑运算符
+
+			/*
+			&&:并且，全部满足才会返回正确，否者返回错误；
+			||：或者，满足任意一个条件都是返回正确，都不满足才会返回错误
+			!:取非，可以给表达式取
+			
+			
+			优先级：
+			!(非) > &&(与) > ||(或)
+			*/
+			x = 10;
+			var value = x > 5 && x == 10;
+			console.log(value)
+
+			x = 10;
+			var value = x > 5 || x == 20;
+			console.log(value)
+
+			value = !x;
+			console.log(value)
+
+			var a = 10,
+				b = 0;
+			value = a && b;
+			//返回值是b
+			console.log(value);
+
+			/*
+			&&：短路问题,当第一个表达式错误，那么第一个表达式的值就会作为整个判断的结果返回，后边的第二个表达式被短路，不执行
+			*/
+			value = undefined && ++b;
+			console.log(value, b)
+
+			b = 0;
+			value = a < 5 && ++b;
+			console.log(value, b)
+
+			//第一个是正确的,才会执行弹框
+			0 && alert(100);
+			10 || alert(100);
+
+			b = 0;
+			value = 100 || ++b || b++;
+			console.log(value, b); //100 0
+
+			b = 0;
+			value = 100 || (++b && b++);
+			console.log(value, b); //100 0
+
+			b = 0;
+			value = (100 || ++b) && b++;
+			console.log(value, b); //0 1
+
+
+
+			//判断闰年
+			//能被4整除且不能被100整除
+		    //能被400整除
+		var year = 2000;
+		var value = (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)
+			if(value){
+				console.log("是润年");
+			}else{
+				console.log("不是闰年");
+			}
+		
+		</script>
+	</body>
+</html>

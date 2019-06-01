@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			数组
+			
+			*/
+			//1.创建数组
+			var numbers = [10, 20, 30];
+			//2.创建数组
+			numbers = new Array(100, 200, 300);
+			console.log(numbers);
+			//二维数组:把所有的数字取出来,保存到bigNumbers数组中
+			var arr = [numbers, [1, 2, 3, 4]];
+			var bigNumbers = [];
+			// var n= 0;
+			console.log(arr);
+
+			for (var i = 0; i < arr.length; i++) {
+				for (var j = 0; j < arr[i].length; j++) {
+					// bigNumbers[n] = arr[i][j];
+					//  n++;
+					bigNumbers.push(arr[i][j]);
+				}
+			}
+			console.log(bigNumbers);
+
+
+			/*1.
+			length = push(1,2,3....n);
+			特点：修改原数组；
+			2.
+		     被删除的元素 = pop()
+			 特点：修改原数组，末尾删除一个
+			 3.
+			length = unshift(开头1,2,3....n末尾);
+			特点：修改原数组，添加开头
+			4.
+			length = shift(开头1,2,3....n末尾);
+			特点：修改原数组，开头删除
+			
+			*/
+			numbers = [];
+			var a = numbers.push(10, 11, 12, 13);
+			console.log(numbers, a);
+
+			numbers.unshift(1, 2, 3);
+			console.log(numbers);
+
+			var b = numbers.pop();
+			console.log(numbers, b);
+
+			var c = numbers.shift();
+			console.log(numbers, c);
+			/*5.
+			array.splice(index,howmany,item1,.....,itemX)
+			splice() 方法用于添加或删除数组中的元素。
+			注意：这种方法会改变原始数组。
+
+
+			
+			*/
+			var sites = ["淘宝", "京东", "蓝鸥", "阿里"];
+			var d = sites.splice(1, 2, "娃哈哈", "娃哈哈", "娃哈哈");
+			console.log(sites, d);
+			var sites = ["淘宝", "京东", "蓝鸥", "阿里"];
+			var d = sites.splice(2, 0, "娃哈哈", "娃哈哈", "娃哈哈");
+			console.log(sites);//["淘宝", "京东", "娃哈哈", "娃哈哈", "娃哈哈", "蓝鸥", "阿里"]
+			
+			/*
+			该范围产生的新数组 = array.slice(start,end)
+			[start,end）包含开始位置，不包含结束位置
+			注意：slice（）这种方法不会改变原始数组。
+			
+			*/
+			var fruits = ["banana","orange","apple","mango"];
+			var arr = fruits.slice(1,3);//截取中间两个
+			console.log(fruits,arr);//原数组不变
+			
+			// indexOf： 返回元素所在位置
+			// arr.indexOf(item,start)
+			 //参数2:规定在数组中开始检索的开始位置,找到后立马结束
+			var fruits = ["banana","orange","apple","mango","apple"];
+			var arr = fruits.indexOf("apple",3);
+			console.log(fruits,arr);
+			
+			
+			/*
+			isArray() 方法用于判断一个对象是否为数组。
+			
+			如果对象是数组返回 true，否则返回 false。
+			
+			
+			
+			技巧：找一个数组特有的属性或者方法，判断变量是否具有，对象的话返回undefined；
+			*/
+		   
+		   
+		   var a ={}, b = [];
+		   //object object
+		   console.log(typeof a ,typeof b);
+		   
+		   //false true
+		   console.log(Array.isArray(a) ,Array.isArray(b));
+		   //undefined 0
+		   if(a.length == undefined){
+			   console.log("a不是一个数组");
+		   }else{
+			   console.log("a是一个数组");
+		   }
+		</script>
+	</body>
+</html>

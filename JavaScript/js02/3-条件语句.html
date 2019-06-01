@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//找最大值
+			var a = 160,
+				b = 220,
+				c = 234;
+
+			//假设a最大值
+			var max = a;
+			if (max < b) {
+				max = b;
+			}
+			if (max < c) {
+				max = c;
+			}
+			console.log(max);
+
+			//三目运算:?前面是条件,条件成立,返回;左边,不成立,返回，右边
+			//适合:简单比较运算,比较完后拿结果
+			var age = 18;
+			var value = age > 18 ? "老司机专车开车去" : "回家学习去吧";
+			console.log(value);
+
+
+
+			var max;
+			max = a > b ? a : b;
+			max = max > c ? max : c;
+			console.log(max);
+
+			max = (a > b ? a : b) > c ? (a > b ? a : b) : c;
+			console.log(max);
+
+
+
+			var count = 2;
+			if (count === 1) {
+				console.log("睡觉。。。。");
+			} else if (count === 2) {
+				//只有上边不成立,才会执行这个判断
+				console.log("下象棋");
+			} else if (count === 3) {
+				console.log("斗地主");
+			} else {
+				console.log("写代码");
+			}
+
+			//效率不好,每个都要判断
+			if (count === 1) {
+				console.log("睡觉。。。。");
+			}
+			if (count === 2) {
+				//只有上边不成立,才会执行这个判断
+				console.log("下象棋");
+			}
+
+
+              // new Date():获取当前时间
+			var d = new Date().getDay();
+			//获取周几
+			console.log(d);
+             
+			 var d = 5;
+			switch (d) {
+				case 1:
+					console.log("周一，上课写代码");
+					break;
+				case 2:
+					console.log("周二，上课写代码");
+					break;
+				case 3:
+					console.log("周三，上课写代码");
+					break;
+				case 4:
+					console.log("周四，上课写代码");
+					break;
+					//以上都不满足
+				default:
+				    console.log("周五六七，还在写代码");
+			}
+			//注意:break不能省略,否者条件成立后,会往下贯穿执行
+			//break作用:当条件成立后,跳出判断
+		</script>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn"  type="button">js中函数绑定</button>
+		<hr>
+		<!-- onclick在html中绑定，是点击后，会执行onclick 保存的字符串 -->
+		<button id="btn"  onclick="alert(1);fn()" type="button">html中函数绑定</button>
+		<hr>
+		<button id="btn3" type="button">点击生成7个不重复的数字存入数组，范围[1,10]</button>
+		<script src="../../work/ku/function.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var btnEle = document.getElementById("btn");
+			//绑定方法
+			
+			function fn(){
+				console.log("点击我来执行");
+				//自己不写返回值,函数会帮你返回一个undefined;
+				//return "儿童节快乐";
+			}
+			btnEle.onclick = fn;
+			//错误写法,会把函数的返回值给onclick方法;
+			//btnEle.onclick = fn();
+			//函数名也是一个变量,保存的势函数的地址(找到函数的凭证),只写函数名,函数并不会执行;
+		    console.log(fn,typeof fn,typeof fn());//"function""undefined"
+			//函数名():调用函数,获取到函数的返回值!
+			console.log(fn());//输出的是函数的返回值
+			//让变量a也能找到函数,也可以调用函数;
+			var a = fn;
+			a();
+			btnEle.onclick();
+			
+			
+			var btn3 =document.getElementById("btn3");
+			//function(){}:没有函数名,会创建这个函数,并且直接返回函数地址
+			 btn3.onclick = function(){
+			    var numbers = [];
+				while(true){
+				var n =	randomNumber(1,10);
+				var value = numbers.indexOf(n);
+				if(value == -1)numbers.push(n);
+				//不存在返回-1;
+				numbers.indexOf(n);
+					if(numbers.length == 7)break;
+				}
+				document.write(numbers);
+			 };
+		</script>
+	</body>
+</html>

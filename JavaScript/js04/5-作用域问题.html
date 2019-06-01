@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			全局 JavaScript 变量
+			在函数外声明的变量是全局变量，网页上的所有脚本和函数都能访问它。
+            函数内部声明的变量（使用 var）是局部变量，所以只能在函数内部访问它。（该变量的作用域是局部的）。
+
+			*/
+			// 			JavaScript 变量的生存期
+			// JavaScript 变量的生命期从它们被声明的时间开始。
+			// 
+			// 局部变量会在函数运行以后被删除。
+			// 
+			// 全局变量会在页面关闭后被删除。
+			
+			
+			
+			
+
+			var a = 10,
+				b = "20";
+			var a = 100, //会覆盖上面变量a;
+				c = 2;
+
+			function hello() {
+				//任何函数中,都可以访问/修改全局变量
+				console.log(a, b);
+				//局部作用于
+				var c = 30;
+			}
+			hello(); //局部变量出生
+			//局部变量c边删除了
+
+			//访问不了局部变量
+
+			function jiancaoping() {
+				var c = 300;
+				var a = 600;
+				//先看看自己作用于有没有,有就用,没有的话就去全局找
+				console.log("尖草坪", a, b, c);
+			}
+			jiancaoping();
+		</script>
+	</body>
+</html>

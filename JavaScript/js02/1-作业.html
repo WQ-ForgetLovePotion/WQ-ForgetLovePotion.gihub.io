@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			@keyframes move {
+				from {
+					transform: translate(0, 0);
+				}
+
+				25% {
+					transform: translate(300px, 0) rotateZ(90deg);
+					background: red;
+				}
+
+				50% {
+					transform: translate(300px, 300px) rotateZ(180deg);
+				}
+
+				75% {
+					transform: translate(0px, 300px) rotateZ(270deg);
+				}
+
+				100% {
+					transform: translate(0, 0) rotateZ(360deg);
+				}
+			}
+
+			#symbol {
+				outline: none;
+				text-align: center;
+				width: 40px;
+				height: 40px;
+			}
+
+			#res {
+				cursor: pointer;
+			}
+
+			#qr {
+				cursor: pointer;
+			}
+
+			img {
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="width: 150px; height: 150px;border: none; outline: none; background: red;margin-left: 300px;">盒子</div>
+		<!-- 行间样式！优先级比较高，可以覆盖id或者class等选择器样式 -->
+		<input type="number" name="" id="rotate" value="30" />
+		<button type="button" onclick="xz()">确定</button>
+		<hr>
+		<div id="">
+			<input type="number" name="" id="num1" value="100" />
+			<input type="text" name="" id="symbol" value="+" />
+			<input type="number" name="" id="num2" value="100" />
+			=
+			<strong id="res" onclick="update()">点击更新结果</strong>
+
+		</div>
+		<hr>
+		<input type="number" id="naer" placeholder="请填写年份" />
+		<strong id="qr" onclick="n()">确认</strong>
+		<hr>
+		<img src="../../练习/JavaScript/img/pic_bulboff.gif" onclick="dp()" id="pic1">
+		<img src="../../练习/JavaScript/img/pic_bulbon.gif" alt="" onclick="dp()" id="pic2">
+
+
+
+		<script type="text/javascript">
+			//获取元素对象
+			var box = document.getElementById("box");
+			var rotateElement = document.getElementById("rotate");
+			box.style.transition = "3s";
+
+			function xz() {
+				if (rotateValue == null) {
+					box.style.transform = "rotate(" + 0 + "deg)";
+				}
+				var rotateValue = rotateElement.value;
+				box.style.transform = "rotate(" + rotateValue + "deg) scale(1.5,1.5) ";
+				box.style.animation = "move 2s  ";
+				//animation样式不能重复添加,除非等动画执行完后删除这个样式,才能开启下次动画
+
+
+
+				// 监听动画完成,删除样式
+				box.addEventListener("animationend", function() {
+					box.style.animation = "";
+				})
+			}
+			//--------------------------------------------
+			var num1Element = document.getElementById("num1");
+			var symbolElement = document.getElementById("symbol")
+			var num2Element = document.getElementById("num2");
+			var resElement = document.getElementById("res");
+
+			function update() {
+				//num1:这个id可以直接拿到元素对象,但不是标准写法,但是浏览器都支持
+				//alert(resElement.value)
+				var n1 = +num1Element.value;
+				var n2 = +num2Element.value;
+				switch (symbolElement.value) {
+					case "":
+						resElement.innerHTML = "请填写计算符号（点击更新）";
+						break;
+					case "+":
+						resElement.innerHTML = n1 + n2 + "(点击更新结果)";
+						break;
+
+					case "-":
+						resElement.innerHTML = n1 - n2 + "(点击更新结果)";
+						break;
+					case "*":
+						resElement.innerHTML = n1 * n2 + "(点击更新结果)";
+						break;
+					case "/":
+						resElement.innerHTML = n1 / n2 + "(点击更新结果)";
+						break;
+					default:
+						resElement.innerHTML = "填写的符号有问题";
+						break;
+				}
+			}
+			//=-----------------------------------------
+			var nearElement = document.getElementById("naer");
+			var qrElement = document.getElementById("qr");
+
+			function n() {
+				// if ((nearElement.value % 400 == 0) || (nearElement.value % 4 == 0 && nearElement.value % 100 != 0)) {
+				// 	qrElement.innerHTML = nearElement.value + "年是闰年 （更新请点击）"
+				// } else {
+				// 	qrElement.innerHTML = nearElement.value + "年是平年 （更新请点击）"
+				// }
+				console.log(nearElement.value)
+				switch (nearElement.value % 4 == 0) {
+					case true:
+						switch (nearElement.value % 100 == 0) {
+							case false:
+								qrElement.innerHTML = nearElement.value + "年是闰年 （更新请点击）";
+								break;
+							case true:
+								switch (nearElement.value % 400 == 0) {
+									case true:
+										qrElement.innerHTML = nearElement.value + "年是闰年 （更新请点击）";
+										break;
+									case false:
+										qrElement.innerHTML = nearElement.value + "年是平年 （更新请点击）";
+										break;
+								}
+								break;
+						}
+
+						break;
+					case false:
+						qrElement.innerHTML = nearElement.value + "年是平年 （更新请点击）";
+						break;
+
+				}
+
+			}
+			//-------------------------------------
+			var pic1Element = document.getElementById("pic1");
+			var pic2Element = document.getElementById("pic2");
+			pic2Element.style.display = "none";
+			pic1Element.style.display = "block";
+
+			function dp() {
+				var huise = pic1Element.style.display;
+				var lse = pic2Element.style.display;
+				//if语句
+				// if(huise == "block"){
+				// 	pic1Element.style.display = "none";
+				// 	pic2Element.style.display = "block";
+				// }else{
+				// 	pic1Element.style.display = "block";
+				// 	pic2Element.style.display = "none";
+				// }
+
+
+
+				//switch语句
+				switch (huise == "block") {
+					case true:
+						pic1Element.style.display = "none";
+						pic2Element.style.display = "block";
+						break;
+					case false:
+						pic1Element.style.display = "block";
+						pic2Element.style.display = "none";
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>

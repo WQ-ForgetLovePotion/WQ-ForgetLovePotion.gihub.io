@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="./img/pic_bulboff.gif" alt="" onclick="toggle()" id="bulb">
+		<script type="text/javascript">
+			var bulbImg = document.getElementById("bulb");
+			// console.log(bulbImg.src)
+			//记录灯泡的状态,on = true的时候打开
+			var on = false;
+
+			//方法一
+			function toggle() {
+
+				if (on == true) {
+					//关闭
+					bulbImg.src = "./img/pic_bulboff.gif";
+					bulbImg.style.border = "none";	
+					//on = false;
+				} else {
+					//打开
+					bulbImg.src = "./img/pic_bulbon.gif";
+					bulbImg.style.border = "1px solid red";
+					//on = true;
+				}
+				//取反
+				on = !on;
+			}
+			//方法二
+			function _toggle() {
+				bulbImg.src = on == false ? "./img/pic_bulboff.gif" : "./img/pic_bulbon.gif"
+				on = !on
+			}
+		</script>
+	</body>
+</html>

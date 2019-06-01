@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//参数+ 返回值
+			function sum() {
+				//arguments函数定义的变量,保存传递的参数
+				// console.log(arguments);个数不确定使用
+				var n = 0;
+				for (var i = 0; i < arguments.length; i++) {
+					n += arguments[i];
+				}
+
+				//返回给调用者
+				return n;
+			}
+
+			var value = sum(10, 20, 30); //被return的值替换
+
+
+
+			//封装随机函数
+			function randomNumber(a = 1, b = 10) {
+				//这两个函数会做个类型转换,加入含有其他字符,返回的是NaN
+                var max = Math.max(a,b);
+				var min = Math.min(a,b);
+				console.log(max,min);
+				if(isNaN(max) && isNaN(min))throw "参数不规范";
+				//if(isNaN(max) && isNaN(min))return;//类似在循环中用break,结束本次函数的执行
+				//函数中,见到return 就会中终止执行,返回
+				return Math.floor(Math.random()*(max -min +1)+min);
+				
+				
+				
+			}
+
+
+			var n = randomNumber(2, 5);
+			console.log(n);
+			//var n = randomNumber("12s", "213");
+		</script>
+	</body>
+</html>

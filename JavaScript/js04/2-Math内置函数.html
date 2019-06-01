@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				display: flex;
+			}
+
+			.box .item {
+				flex: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" onclick="update()">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+		</div>
+
+		<div class="item">5</div>
+		<script type="text/javascript">
+			/*
+			Math对象
+			*/
+			console.log(Math);
+			//圆周率
+			console.log(Math.PI);
+
+			//pow(x,y);返回 x 的 y 次幂。
+			//log(x)	返回数的自然对数（底为e）。
+			//arr.indexof(value)//判断是否有这个数字
+			//绝对值
+			var n = Math.abs(-10);
+			console.log(n);
+			//上舍入|进位取整
+			console.log(Math.ceil(1.3));
+			//去除小数点
+			console.log(Math.floor(1.3));
+			//四舍五入
+			console.log(Math.round(1.3));
+			console.log(Math.round(1.5));
+           
+			//特点：参数可以任意个
+			//最小值
+			console.log(Math.min(1, 2, 4, 3, 0, -1));
+			//最大值
+			console.log(Math.max(1, 2, 4, 3, 0, -1));
+			// 随机数范围[0，1) 0(包含) ~1(不包含)
+			console.log(Math.random())
+			//[1~100)
+			//有小数
+			console.log(Math.random() * 100)
+			//没小数
+			var n = Math.random() * 100;
+			console.log(Math.ceil(n));
+			//[10,100]
+			n = Math.floor(Math.random() * 91 + 10);
+			console.log(n);
+			//[20,100]
+			n = Math.floor(Math.random() * 81 + 20);
+			console.log(n);
+			//
+			// [n,m]
+			// Math.floor(Math.random()* (m-n+1)+n);
+
+
+
+			//document表示整个文档，会找到整个文档所有class是item的元素
+			var items = document.getElementsByClassName("item");
+			// 	// console.log(items);
+			// 	//即使只有一个box,也是返回的一个数组集合
+			//var box = document.getElementsByClassName("box")[1];
+			var box = document.getElementsByClassName("box")[0];
+			// 	console.log(box.length)
+			console.log(box);
+			items = box.getElementsByClassName("item"); //获取box下边的item,class是可以用过元素对象获取,但是id只能document
+			// console.log(items);
+
+             //定义update函数,并指定形参n1,n2
+			 //不传参数,默认是50~500的范围,不传递,形参是undefined
+			 //只允许传递number类型
+			function update(n1=50 ,n2=500) {
+				console.log(n1,n2);
+				//防止使用者不传递参数
+				n1 = n1 ==undefined ? 50 :n1;
+				n2 = n2 ==undefined ? 500 :n2;
+				if(typeof n1 != 'number' || typeof n2 != 'number'){
+					// alert("我只能是个数字");
+					//主动抛出异常,结束程序执行
+					throw "参数只能是个数字";
+				}
+				
+				
+				
+				
+				
+				
+				var min = Math.min(n1,n2);
+				var max = Math.max(n1,n2);
+				for (var i = 0; i < items.length; i++) {
+					var r = Math.floor(Math.random() * 256);
+					var g = Math.floor(Math.random() * 256);
+					var b = Math.floor(Math.random() * 256);
+					items[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+					console.log(items[i].style.backgroundColor);
+
+
+					//随机高度[10,150];
+					var h = Math.floor(Math.random() * (max-min+1) + 10);
+					items[i].style.lineHeight = h + "px";
+					items[i].style.height = h + "px";
+
+				}
+			}
+			//执行
+			//传达参数
+			 update(100,200); 
+			//update("asd","a1");
+		</script>
+	</body>
+</html>
