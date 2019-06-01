@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../work/ku/function.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var arr = [];
+			var b = 0;
+			// for (var i = 0; i < 7; i++) {
+			// 	b = randomNumber(1, 10);
+			// 	var c = arr.indexOf(b);
+			// 	while (c != -1) {
+			// 		b = randomNumber(1, 10);
+			// 		var c = arr.indexOf(b);
+			// 	}
+			// 	arr[i] = b;
+			// }
+			while(true){
+				
+					b = randomNumber(1, 10);
+					var c = arr.indexOf(b);
+					if(c == -1){
+						arr.push(b);
+					}
+					if(arr.length == 7)break;
+			}
+			console.log(arr);
+			
+			
+			
+		</script>
+
+	</body>
+</html>

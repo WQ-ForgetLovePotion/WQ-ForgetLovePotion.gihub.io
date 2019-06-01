@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				font-size: 100px;
+			}
+			.box {
+				width: 10.5rem;
+				height: 4rem;
+				border: .05rem solid blue;
+				overflow: hidden;
+				position: absolute;
+				 top: 0;
+				 bottom: 0;
+				 margin: auto;
+				 left: 0;
+				 right: 0; 
+			}
+
+			.box2 {
+				display: flex;
+				width: 10.5rem;
+				top: 0;
+				z-index: 22;
+				position: absolute;
+				justify-content: space-around;
+				align-items: center;
+				top: 3.2rem;
+			}
+
+			span {
+				background: #FFFFFF;
+				text-align: center;
+				width: 1rem;
+				height: .6rem;
+				line-height: .6rem;
+				cursor: pointer;
+                font-size: .15rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+
+			<img src="img/tjtt.jpg" id="photo" height="400px" alt="">
+			<div class="box2">
+				<span class="one">显示1</span>
+				<span class="one">显示2</span>
+				<span class="one">显示3</span>
+				<span class="one">显示4</span>
+				<span class="one">显示5</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var pic = document.getElementsByClassName("one");
+			var marl = document.getElementById("photo");
+			//方法1
+			for (var i = 0; i < pic.length; i++) {
+
+				pic[i].index = i;
+				pic[i].onclick = function() {
+					var n = -(this.index * 1050);
+					marl.style.marginLeft = n + "px";
+					marl.style.transition = "2s";
+				}
+
+			}
+			//方法2
+			// pic[0].onclick = function() {
+			// 	marl.style.marginLeft = "0px";
+			// 	marl.style.transition = "3s";
+			// }
+			// pic[1].onclick = function() {
+			// 	marl.style.marginLeft = "-1050px";
+			// 	marl.style.transition = "3s";
+			// }
+			// pic[2].onclick = function() {
+			// 	marl.style.marginLeft = "-2100px";
+			// 	marl.style.transition = "3s";
+			// }
+			// pic[3].onclick = function() {
+			// 	marl.style.marginLeft = "-3150px";
+			// 	marl.style.transition = "3s";
+			// }
+			// pic[4].onclick = function() {
+			// 	marl.style.marginLeft = "-4200px";
+			// 	marl.style.transition = "3s";
+			// }
+		</script>
+	</body>
+</html>

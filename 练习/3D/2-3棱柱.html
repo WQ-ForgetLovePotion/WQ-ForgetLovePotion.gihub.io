@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style-type: none;
+			}
+			html,body{
+				height:100%;
+			}
+			body{
+				background: url(img/bg.jpg) no-repeat center/100% 100%;
+				font-size: 20x
+				position:relative;
+				perspective: 500;
+				
+			}
+			.box{
+				width: 100px;
+				height: 300px;
+				/* border: 1px solid red; */
+				/* background: green; */
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				transform: rotateY(30deg);
+				transform-style: preserve-3d;
+				 animation: move 5s linear infinite forwards ;
+				 
+			}
+			.box ul{
+				position: relative;
+				transform-style: preserve-3d;
+			}
+			.box ul li{
+				
+				width: 100px;
+				height: 300px;
+				border: 1px solid blue;
+				position: absolute;
+				/* background: yellow; */
+				
+			}
+			.box ul li:nth-child(1){
+				transform: translatez(28.9px);
+			}
+			.box ul li:nth-child(2){
+				transform:rotateY(120deg) translatez(28.9px);
+			}
+			.box ul li:nth-child(3){
+				transform:rotateY(240deg) translatez(28.9px);
+			}
+			img{
+				width: 100px;
+				height: 300px;
+			}
+			@keyframes move {
+				0% {
+					transform: rotateX(0deg) rotateY(0) rotateZ(0);
+				}
+				  25%{
+					transform: rotateX(0deg) rotateY(0) rotateZ(0);
+				}
+				33% {
+					transform: rotateX(0deg) rotateY(120deg) rotateZ(0deg);
+				}
+				58% {
+					transform: rotateX(0deg) rotateY(120deg) rotateZ(0deg);
+				}
+				66% {
+					transform: rotateX(0deg) rotateY(240deg) rotateZ(0deg);
+				91% {
+					transform: rotateX(0deg) rotateY(240deg) rotateZ(0deg);
+					100% {
+						transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li><img src="img/一.jpg" alt=""></li>
+				<li><img src="img/二.jpg" alt=""></li>
+				<li><img src="img/三.jpg" alt=""></li>
+			</ul>
+		</div>
+	</body>
+</html>

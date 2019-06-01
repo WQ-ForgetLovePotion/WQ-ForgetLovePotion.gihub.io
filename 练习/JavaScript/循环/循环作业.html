@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1~100的乘积
+			   //方法1
+			var cj = 1;
+			for (var i = 1; i <= 100; i++) {
+				cj *= i;
+			}
+			console.log("1~100的成绩为" + cj);
+			
+				
+				
+				
+				
+				
+				
+				
+			//var numbers = [100,200,88,109,1,5,100]; 找里面的最大值,以及它所在下标
+			var numbers = [100, 200, 88, 109, 1, 5, 100, 102, 90, 1, 6, 300, 231];
+			var max = 0,
+				b = 0;
+			for (var i = 0; i < numbers.length; i++) {
+				max > numbers[i] ? b : b = i;
+				max > numbers[i] ? max : max = numbers[i];
+			}
+
+			console.log("最大值为:" + max + ",他的下标为:" + b);
+
+			//.给定某年某月某日,输出其为这一年的第几天(提示: 使用数组)
+						var y = 2000;
+						var m = 3;
+						var d = 10;
+						var arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+						var arr1 = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+						var sday = 0;
+						if ((y % 400 == 0) || (y % 4 == 0 && y % 100 != 0)) {
+							for (var i = 1; i < m; i++) {
+								sday += arr1[i - 1];
+							}
+							sday += d;
+							console.log(y + "年" + m + "月" + d + "日是" + y + "年的第" + sday + "天");
+						} else {
+							for (var i = 1; i < m; i++) {
+								sday += arr[i - 1];
+							}
+							sday += d;
+							console.log(y + "年" + m + "月" + d + "日是" + y + "年的第" + sday + "天");
+			
+						}
+			
+			//编程将所有“水仙花数”打印出来，并打印其总个数。 “水仙花数”是一个各个位立方之和等于该整数的三位数(个位数立方 + 十位数立方 + 百位数立方 = 这个整数)。
+                  var n =0;
+			for (var i = 100; i <= 999; i++) {
+				
+				var b = Math.floor(i / 100);
+				var s = Math.floor(i%100 / 10);
+				var g = i%10;
+				var res = Math.pow(b,3)+Math.pow(s,3)+Math.pow(g,3);
+				if (i == res) {
+					document.write(i + " ");
+					 n = n + 1;
+				}
+			} 
+			document.write("一共有" + n + "个水仙花数");
+			
+			//方法二
+			var s = [];
+			var n = 0;
+			var m = 0;
+			for (var a = 1; a <= 9; a++) {
+				for (var b = 0; b <= 9; b++) {
+					for (var c = 0; c <= 9; c++) {
+						if (a * a * a + b * b * b + c * c * c ==  100 * a + 10 * b + c){
+							s[n] = a * a * a + b * b * b + c * c * c;
+							n++;
+						} else {
+
+							m++;
+						}
+					}
+				}
+			}
+			console.log("水仙花数为：" + s + ",有" + n + "个");
+		</script>
+	</body>
+</html>
