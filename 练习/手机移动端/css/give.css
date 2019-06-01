@@ -1,0 +1,165 @@
+html,
+body {
+	color: #333333;
+    font-family: NotoSansHans;
+}
+
+.nav-header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h3 {
+	padding-top: .15rem;
+	padding-bottom: .15rem;
+	font-size: .18rem;
+}
+.nav-header a{
+	font-size: .13rem;
+	color: #576b95;
+	padding-top: .23rem;
+	padding-bottom: .3rem;
+}
+.nav-header a img {
+	height: .2rem;
+	position: absolute;
+	top: .19rem;
+	left: .1rem;
+
+}
+
+.all-price {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid #e0e0e0;
+	border-radius: .05rem;
+	margin: .14rem .23rem;
+	font-family: PingFang;
+}
+
+.pic {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.pic img:nth-child(1) {
+	padding-top: .19rem;
+	width: .33rem;
+	padding-bottom: .15rem;
+
+}
+
+.pic p:nth-child(2) {
+	font-size: .15rem;
+	padding-bottom: .05rem;
+	font-weight: 600;
+
+}
+
+.pic p:nth-child(3) {
+	font-size: .3rem;
+	font-weight: 600;
+
+}
+
+.two {
+	width: 100%;
+	display: flex;
+	padding-bottom: .1rem;
+	font-family: PingFang;
+}
+
+.two-left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.two-left p:nth-child(1){
+	font-size: .18rem;
+	color: #777;
+	
+}
+.two-left p:nth-child(2){
+	font-size: .12rem;
+	color: #777;
+	
+}
+.two-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.two-right p:nth-child(1){
+	font-size: .18rem;
+	color: #777;
+	
+}
+.two-right p:nth-child(2){
+	font-size: .12rem;
+	color: #777;
+	
+}
+.nvmph{
+	display: flex;
+	border: 1px solid #e0e0e0;
+	font-size: .15rem;
+	border-radius: .05rem;
+	margin: .14rem .23rem;
+}
+.left{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding-left: .15rem;
+}
+.right{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding-right: .15rem;
+}
+
+.left p:nth-child(2){
+	font-size: .24rem;
+	padding-top: .14rem;
+	padding-bottom: .2rem;
+}
+.right p:nth-child(1){
+	font-size: .12rem;
+	padding-top: .14rem;
+	color: #f8c749;
+}
+.right p:nth-child(1) span{
+	color: #333333;
+}
+.right p:nth-child(1) a{
+	color: #f8c749;
+}
+.right p:nth-child(1) a:hover{
+	text-decoration: none;
+}
+.right p:nth-child(2){
+	font-size: .12rem;
+	padding-top: .3rem;
+	
+	
+}
+.right p:nth-child(2) span{
+	font-size: .12rem;
+	padding-top: .14rem;
+	font-weight: 900;
+	
+}
+.nvmph .right .green{
+	color:#69be49;
+}
