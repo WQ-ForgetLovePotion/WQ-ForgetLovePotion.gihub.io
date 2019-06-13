@@ -1,0 +1,43 @@
+.wraper{
+	background: #000066;
+}
+a:hover{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+ul{
+	width: 590px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height:30px;
+	z-index: 2;
+	margin:  0 auto;
+	position: relative;
+}
+.box{
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #f40;
+}
+li{
+	height: 100%;
+	line-height: 30px;
+	padding: 0 10px;
+	 color: #FFFFFF;
+	 font-weight: 700;
+	 font-size: 14px;
+	 z-index: 5;
+	 
+}
+li a{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.red{
+	background: orangered;
+}
+

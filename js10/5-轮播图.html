@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<!--1.引入css：备注： 可以修改#swiper-container，定制轮播图大小 -->
+		<link rel="stylesheet" type="text/css" href="css/wq-swiper.css"/>
+	</head>
+	<body>
+		<!-- 定制swiper-item的轮播内容，需要自己在最后补一张图-->
+		<div id="swiper-container">
+			<div class="swiper-wrapper">
+				<!-- 使用者只需要修改item里边的内容就可以了 -->
+				<div class="swiper-item">
+					<img src="img/1.jpg">
+				</div>
+				<div class="swiper-item">
+					<img src="img/2.jpg">
+				</div>
+				<div class="swiper-item">
+					<img src="img/3.jpg">
+				</div>
+				<div class="swiper-item">
+					<img src="img/2.jpg">
+				</div>
+				<div class="swiper-item">
+					<img src="img/1.jpg">
+				</div>
+
+			</div>
+			<div id="swiper-button-left">
+				< </div> <div id="swiper-button-right">
+					>
+			</div>
+			<!-- 分页器 -->
+			<div class="swiper-pagination">
+
+				<ul>
+					<li class="pagination-selected"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/tween.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入tween.js + wq-swiper.js -->
+<script src="js/wq-swiper.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
